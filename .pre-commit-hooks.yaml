@@ -1,9 +1,19 @@
-- id: check-sqlfluff
-  name: Check SQLFluff via format and/or parse
-  description: Runs SQLFluff via the commandline to format and/or parse
-  entry: check-sqlfluff
+- id: check-sqlfluff-format
+  name: Check SQLFluff format
+  description: Runs SQLFluff via the commandline to format
+  entry: check_sqlfluff
   language: python
   types: [sql]
   pass_filenames: true
-  additional_dependencies:
-    - sqlfluff==3.3.1
+  additional_dependencies: []
+  args: ["--format"]
+
+- id: check-sqlfluff-parse
+  name: Check SQLFluff parse
+  description: Runs SQLFluff via the commandline to parse
+  entry: check_sqlfluff
+  language: python
+  types: [sql]
+  pass_filenames: true
+  additional_dependencies: []
+  args: ["--parse"]
