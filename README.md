@@ -2,7 +2,6 @@
 
 Some public pre-commit hooks that Future Facts shares with the world.
 
-
 ## Hooks
 
 ### check-sqlfluff-format
@@ -29,6 +28,20 @@ repos:
       - id: check-sqlfluff-parse
       - id: check-sqlfluff-format
 ```
+
+## Contributing
+
+If you would like to create a new pre-commit hook. If you are a Future Facts employee feel free to do so.
+If you are from outside the company you can create a fork and then a pull-request from your fork.
+
+Getting started with this repo is easy:
+
+- clone
+- `poetry install`
+- `pre-commit install`
+  - Not added as a dev dependency.
+
+Read the [how-to-add-a-hook.md](docs/how-to-add-a-hook.md) document to see how you can add a new hook.
 
 ## Why a custom check-sqlfluff hook
 
