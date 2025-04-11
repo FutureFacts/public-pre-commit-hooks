@@ -38,9 +38,7 @@ def get_large_file_limit() -> int:
     """Get the large file skip byte limit from the .sqlfluff configuration file. Return 0 if there is no limit."""
     sqlfluff_path = Path('.sqlfluff')
     if not sqlfluff_path.exists():
-        raise FileNotFoundError(
-            'Configuration file .sqlfluff not found in the current directory.'
-        )
+        return DEFAULT_SQLFLUFF_LARGE_FILE_SKIP_BYTE_LIMIT
 
     config = configparser.ConfigParser()
     config.read(str(sqlfluff_path))
@@ -152,6 +150,11 @@ def format_sql_files(files: list[Path]) -> int:
 
 def main() -> None:
     """Main entry point for CLI execution."""
+    sqlfluff_path = Path('.sqlfluff')
+    if not sqlfluff_path.exists():
+        print('A .sqlfluff configuration file is required for this script in this directory.')
+        sys.exit(1)
+
     args = parse_arguments()
     sql_files = [Path(file) for file in args.files if file.endswith('.sql')]
 
