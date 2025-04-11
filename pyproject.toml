@@ -1,11 +1,11 @@
-[project]
+[tool.poetry]
 name = "public-pre-commit-hooks"
 version = "1.0.0"
 description = "Custom Public Pre-commit hooks build by Future Facts"
 authors = [
-    {name = "Ramses Kools", email = "ramses.kools@futurefacts.nl"}
+    "Ramses Kools <ramses.kools@futurefacts.nl>"
 ]
-license = {file = "LICENSE"}
+license = "MIT"
 readme = "README.md"
 packages = [
     {include = "pre_commit_hooks"},
