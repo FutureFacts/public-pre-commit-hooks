@@ -1,7 +1,7 @@
 - id: check-sqlfluff
   name: Check SQLFluff via format and/or parse
   description: Runs SQLFluff via the commandline to format and/or parse
-  entry: ./pre_commit_hooks/check-sqlfluff.py
+  entry: .check_sqlfluff
   language: python
   types: [sql]
   pass_filenames: true
